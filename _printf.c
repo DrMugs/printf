@@ -37,6 +37,10 @@ int _printf(const char *format, ...)
 						_putchar(format[i + 2]);
 						i++;
 						break;
+					case 'b':
+						to_binary(va_arg(args, int));
+						i++;
+						break;
 					default:
 						_putchar(format[i]);
 						i++;
@@ -51,3 +55,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (n + i);
 }
+
