@@ -32,6 +32,11 @@ int _printf(const char *format, ...)
 						n += print_string(str);
 						i++;
 						break;
+					case '%':
+						_putchar('%');
+						_putchar(format[i + 2]);
+						i++;
+						break;
 					default:
 						_putchar(format[i]);
 						i++;
@@ -43,5 +48,6 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
+	va_end(args);
 	return (n + i);
 }
