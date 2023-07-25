@@ -2,12 +2,12 @@
 #include <unistd.h>
 
 /**
- * print_string - prints strings
+ * print_str - prints strings
  * @str : string to be printed
  * Return: number of characters
  */
 
-int print_string(char *str)
+int print_str(char *str)
 {
 	int i = 0;
 

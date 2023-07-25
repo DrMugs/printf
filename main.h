@@ -2,7 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
-#include <unstd.h>
+#include <unistd.h>
 
 #define UNUSED(x) ((void) (x))
 #define BUFF_SIZE (1024)
@@ -47,8 +47,8 @@ int _putchar(char c);
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-int print_string(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
+/*int print_string(va_list types, char buffer[],
+		int flags, int width, int precision, int size);*/
 int print_percent(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 
@@ -95,8 +95,8 @@ int handle_write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
 int write_number(int is_positive, int ind, char buffer[],
 		int flags, int width, int precision, int size);
-int write_number(int ind, char bff[], int flags, int width, int precision,
-		int length, char padd, char extra_c);
+/*int write_number(int ind, char bff[], int flags, int width, int precision,
+		int length, char padd, char extra_c);*/
 int write_pointer(char buffer[], int ind, int length,
 		int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[],
@@ -109,4 +109,5 @@ int is_digit(char);
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
+int print_str(char *str);
 #endif
