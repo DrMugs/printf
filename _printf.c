@@ -51,4 +51,11 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (n);
 }
-
+/**
+ *select - identify the specifier
+ *@c: character of the specifier
+ *
+ */
+void select(char *c)
+{
+	if c
