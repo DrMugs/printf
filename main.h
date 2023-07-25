@@ -8,11 +8,11 @@
 #define BUFF_SIZE (1024)
 
 /* FLAGS*/
-#define F_Minus 1
-#define F_plus 2
-#define F_Zero 4
-#define F_Hash 8
-#define F_Space 16
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
 
 /* Sizes */
 #define S_LONG 2
@@ -47,8 +47,8 @@ int _putchar(char c);
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
-/*int print_string(va_list types, char buffer[],
-		int flags, int width, int precision, int size);*/
+int print_string(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 int print_percent(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 
@@ -95,7 +95,7 @@ int handle_write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
 int write_number(int is_positive, int ind, char buffer[],
 		int flags, int width, int precision, int size);
-int write_number(int ind, char bff[], int flags, int width, int precision,
+int write_num(int ind, char bff[], int flags, int width, int precision,
 		int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length,
 		int width, int flags, char padd, char extra_c, int padd_start);

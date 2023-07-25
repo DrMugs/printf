@@ -60,7 +60,7 @@ int handle_write_char(char c, char buffer[],
  *
  * Return: Number of chars printed.
  */
-int write_number(int is_negative, int ind, char buffer[],
+int write_number(int is_positive, int ind, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
@@ -70,7 +70,7 @@ int write_number(int is_negative, int ind, char buffer[],
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
-	if (is_negative)
+	if (is_positive)
 		extra_ch = '-';
 	else if (flags & F_PLUS)
 		extra_ch = '+';
