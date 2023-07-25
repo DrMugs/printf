@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 				switch (format[i + 1])
 				{
 					case 'c':
-						_putchar(va_arg(args, int));
+						n += _putchar(va_arg(args, int));
 						i++;
 						break;
 					case 's':
@@ -33,26 +33,22 @@ int _printf(const char *format, ...)
 						i++;
 						break;
 					case '%':
-						_putchar('%');
-						_putchar(format[i + 2]);
-						i++;
-						break;
-					case 'b':
-						to_binary(va_arg(args, int));
+						n += _putchar('%');
+						n += _putchar(format[i + 2]);
 						i++;
 						break;
 					default:
-						_putchar(format[i]);
+						n += _putchar(format[i]);
 						i++;
 						continue;
 				}
 			}
 			if (format[i - 1] != '%')
-				_putchar(format[i]);
+				n += _putchar(format[i]);
 			i++;
 		}
 	}
 	va_end(args);
-	return (n + i);
+	return (n);
 }
 
