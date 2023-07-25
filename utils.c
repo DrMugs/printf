@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <unstd.h>
+#include <unistd.h>
 
 /**
  * is_printable - Evaluates if a char is printable
