@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 	char *str;
 
 	va_start(args, format);
-
 	if (format)
 	{
 		while (format[i])
@@ -29,12 +28,11 @@ int _printf(const char *format, ...)
 						break;
 					case 's':
 						str = va_arg(args, char *);
-						n += print_string(str);
+						n += print_str(str);
 						i++;
 						break;
 					case '%':
-						n += _putchar('%');
-						n += _putchar(format[i + 2]);
+						n += (_putchar('%') + _putchar(format[i + 2]));
 						i++;
 						break;
 					default:
@@ -51,11 +49,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (n);
 }
-/**
- *select - identify the specifier
- *@c: character of the specifier
- *
- */
-void select(char *c)
-{
-	if c
